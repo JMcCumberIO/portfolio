@@ -10,14 +10,14 @@ function Hero() {
             Jonathan McCumber
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300 transition-colors duration-300">
-            Sr. Application Engineer @ SPS Commerce
+            Senior Software Engineer
           </h2>
           <p className="text-lg text-blue-600 dark:text-blue-300 mb-8 transition-colors duration-300">
             Coralville, Iowa, United States
           </p>
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300">
-              As a Sr. Application Engineer at SPS Commerce, I leverage my skills in cloud administration, technical support, and virtual networks to deliver high-quality solutions for our clients. I have a strong background in network systems and administration, having studied at Metropolitan State University of Denver and Community College of Aurora. I am passionate about staying updated with the latest technologies and best practices in the field, and I continuously seek opportunities to learn and grow as a professional. My goal is to contribute to the success of SPS Commerce and its customers by providing innovative and reliable solutions that meet their needs and expectations.
+              Results-driven Senior Software Engineer with extensive experience in cloud infrastructure, system administration, and application development. Proven track record of designing and implementing scalable solutions, optimizing system performance, and leading technical initiatives. Skilled in cloud technologies, network administration, and modern development practices. Known for delivering innovative solutions while maintaining high standards of code quality and system reliability. Passionate about leveraging technology to solve complex business challenges and drive organizational success.
             </p>
           </div>
           <div className="flex justify-center gap-6">
