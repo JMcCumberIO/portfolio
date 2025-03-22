@@ -10,14 +10,14 @@ function Hero() {
             Jonathan McCumber
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-indigo-700 dark:text-indigo-300 transition-colors duration-300">
-            Senior Software Engineer
+            IT Professional & Developer
           </h2>
           <p className="text-lg text-blue-600 dark:text-blue-300 mb-8 transition-colors duration-300">
             Coralville, Iowa, United States
           </p>
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300">
-              Results-driven Senior Software Engineer with extensive experience in cloud infrastructure, system administration, and application development. Proven track record of designing and implementing scalable solutions, optimizing system performance, and leading technical initiatives. Skilled in cloud technologies, network administration, and modern development practices. Known for delivering innovative solutions while maintaining high standards of code quality and system reliability. Passionate about leveraging technology to solve complex business challenges and drive organizational success.
+              Versatile IT Professional with extensive expertise across diverse technology domains. Notable experience includes EDI system development at SPS Commerce, delivering managed IT services for government entities at Net Source One, and developing EMS software solutions at Zoll Data. Proven track record in system administration, cloud infrastructure, and application development. Skilled in implementing enterprise-wide solutions, optimizing IT operations, and leading technical initiatives. Committed to delivering innovative solutions while maintaining high standards of system reliability and security across various technology sectors.
             </p>
           </div>
           <div className="flex justify-center gap-6">
