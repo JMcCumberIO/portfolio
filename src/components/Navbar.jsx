@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaBars } from "react-icons/fa";
 
 function Navbar() {
   const [isDark, setIsDark] = useState(() => {
@@ -10,6 +10,8 @@ function Navbar() {
       (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
     );
   });
+
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isDark) {
@@ -44,6 +46,7 @@ function Navbar() {
             Jonathan McCumber
           </a>
 
+          {/* Desktop Links */}
           <div className="hidden md:flex space-x-6">
             {navLinks.map((link) => (
               <a
@@ -56,18 +59,39 @@ function Navbar() {
             ))}
           </div>
 
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+            aria-label="Open menu"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <FaBars className="w-5 h-5" />
+          </button>
+
+          {/* Dark Mode Toggle */}
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
             aria-label="Toggle dark mode"
           >
-            {isDark ? (
-              <FaSun className="w-5 h-5" />
-            ) : (
-              <FaMoon className="w-5 h-5" />
-            )}
+            {isDark ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
           </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden flex flex-col space-y-4 mt-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </nav>
   );
