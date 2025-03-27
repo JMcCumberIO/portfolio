@@ -11,7 +11,7 @@ function Contact() {
         </h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-3xl mx-auto">
           <a
-            href="https://www.linkedin.com/in/jonathan-mccumber/"
+            href="https://www.linkedin.com/in/jon-mccumber-3505b212b/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center p-6 backdrop-blur-sm bg-white/30 dark:bg-black/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
