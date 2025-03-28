@@ -13,7 +13,7 @@ function Education() {
             Metropolitan State University of Denver
           </h3>
           <p className="text-xl text-blue-700 dark:text-blue-300 mb-4 font-medium transition-colors duration-300">
-            Bachelor's Degree in Computer Information Systems
+            Computer Information Systems
           </p>
           <p className="text-lg text-indigo-700 dark:text-indigo-300 mb-2 transition-colors duration-300">
             Specialization: Network Systems and Administration

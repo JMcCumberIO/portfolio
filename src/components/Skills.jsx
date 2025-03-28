@@ -8,7 +8,7 @@ function Skills() {
       category: "Cloud & Infrastructure",
       skills: [
         {
-          name: "AWS Cloud Services",
+          name: "Azure Cloud Services",
           icon: <FaAws className="w-8 h-8" />
         },
         {
