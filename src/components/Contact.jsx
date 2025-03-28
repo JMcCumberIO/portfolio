@@ -33,7 +33,7 @@ function Contact() {
           </a>
 
           <a
-            href="mailto:jonathan.mccumber@example.com"
+            href="mailto:JMcCumber12345@gmail.com"
             className="flex flex-col items-center p-6 backdrop-blur-sm bg-white/30 dark:bg-black/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             <FaEnvelope className="w-12 h-12 text-purple-600 dark:text-purple-400 mb-4 transition-colors duration-300" />
