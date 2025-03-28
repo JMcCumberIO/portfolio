@@ -1,6 +1,6 @@
 // src/components/Skills.jsx
 import React from 'react';
-import { FaCloud, FaDesktop, FaNetworkWired, FaDatabase, FaWindows, FaTerminal, FaMicrosoftAzure, FaVectorSquare, FaUsers } from 'react-icons/fa';
+import { FaCloud, FaDesktop, FaNetworkWired, FaDatabase, FaWindows, FaTerminal, VscAzure, FaVectorSquare, FaUsers } from 'react-icons/fa';
 
 function Skills() {
   const skillCategories = [
@@ -9,7 +9,7 @@ function Skills() {
       skills: [
         {
           name: "Azure Cloud Services",
-          icon: <FaMicrosoftAzure className="w-8 h-8" />
+          icon: <VscAzure className="w-8 h-8" />
         },
         {
           name: "VMware Infrastructure",
