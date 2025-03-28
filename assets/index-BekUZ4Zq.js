@@ -10227,7 +10227,7 @@ function kf() {
       skills: [
         {
           name: "Azure Cloud Services",
-          icon: h.jsx(FaMicrosoftAzure, { className: "w-8 h-8" }),
+          icon: h.jsx(ef, { className: "w-8 h-8" }),
         },
         {
           name: "VMware Infrastructure",
