@@ -9326,7 +9326,7 @@ function bd(v) {
     : S(Va);
 }
 function ef(v) {
-  return Fe({
+  return az({
     attr: { viewBox: "0 0 640 512" },
     child: [
       {
