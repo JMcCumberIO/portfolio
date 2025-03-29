@@ -1,7 +1,7 @@
 // src/components/Skills.jsx
 import React from 'react';
 import { FaCloud, FaDesktop, FaNetworkWired, FaDatabase, FaWindows, FaTerminal, FaVectorSquare, FaUsers } from 'react-icons/fa';
-import { VscAzure as az } from 'react-icons/vsc';
+import { VscAzure } from 'react-icons/vsc';
 
 function Skills() {
   const skillCategories = [
