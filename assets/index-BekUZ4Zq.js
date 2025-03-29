@@ -9325,7 +9325,7 @@ function bd(v) {
     ? sn.createElement(Fa.Consumer, null, (p) => S(p))
     : S(Va);
 }
-function VscAzure(v) {
+function ef(v) {
   return VscAzure({
     attr: { viewBox: "0 0 640 512" },
     child: [
@@ -10227,7 +10227,7 @@ function kf() {
       skills: [
         {
           name: "Azure Cloud Services",
-          icon: h.jsx(VscAzure, { className: "w-8 h-8" }),
+          icon: h.jsx(ef, { className: "w-8 h-8" }),
         },
         {
           name: "VMware Infrastructure",
