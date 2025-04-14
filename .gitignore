@@ -43,3 +43,4 @@ coverage/
 
 # Vite
 *.local
+pnpm-workspace.yaml

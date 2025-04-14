@@ -18,6 +18,10 @@ function Skills() {
         {
           name: "Cloud Administration",
           icon: <FaCloud className="w-8 h-8" />
+        },
+        {
+          name: "Azure Cloud Services",
+          
         }
       ]
     },
