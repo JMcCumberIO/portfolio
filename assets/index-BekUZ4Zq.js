@@ -9696,7 +9696,7 @@ const gf = () =>
                             h.jsx("span", {
                               className:
                                 "ml-2 text-sm text-gray-600 dark:text-gray-400",
-                              children: "United States",
+                              children: "Remote, United States",
                             }),
                           ],
                         }),
