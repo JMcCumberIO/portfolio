@@ -1,6 +1,16 @@
 // src/components/Skills.jsx
-import React from 'react';
-import { FaCloud, FaDesktop, FaNetworkWired, FaDatabase, FaWindows, FaTerminal, FaAws, FaVectorSquare, FaUsers } from 'react-icons/fa';
+import React from "react";
+import {
+  FaCloud,
+  FaDesktop,
+  FaNetworkWired,
+  FaDatabase,
+  FaWindows,
+  FaTerminal,
+  FaVectorSquare,
+  FaUsers,
+} from "react-icons/fa";
+import { VscAzure } from "react-icons/vsc";
 
 function Skills() {
   const skillCategories = [
@@ -8,61 +18,60 @@ function Skills() {
       category: "Cloud & Infrastructure",
       skills: [
         {
-          name: "AWS Cloud Services",
-          icon: <FaAws className="w-8 h-8" />
+          name: "Azure Cloud Services",
+          icon: <VscAzure className="w-8 h-8" />,
         },
         {
           name: "VMware Infrastructure",
-          icon: <FaVectorSquare className="w-8 h-8" />
+          icon: <FaVectorSquare className="w-8 h-8" />,
         },
         {
           name: "Cloud Administration",
-          icon: <FaCloud className="w-8 h-8" />
+          icon: <FaCloud className="w-8 h-8" />,
         },
-        {
-          name: "Azure Cloud Services",
-          
-        }
-      ]
+      ],
     },
     {
       category: "Systems & Network",
       skills: [
         {
           name: "Windows Server",
-          icon: <FaWindows className="w-8 h-8" />
+          icon: <FaWindows className="w-8 h-8" />,
         },
         {
           name: "Network Systems",
-          icon: <FaNetworkWired className="w-8 h-8" />
+          icon: <FaNetworkWired className="w-8 h-8" />,
         },
         {
           name: "Active Directory",
-          icon: <FaUsers className="w-8 h-8" />
-        }
-      ]
+          icon: <FaUsers className="w-8 h-8" />,
+        },
+      ],
     },
     {
       category: "Development & Tools",
       skills: [
         {
           name: "SQL & Databases",
-          icon: <FaDatabase className="w-8 h-8" />
+          icon: <FaDatabase className="w-8 h-8" />,
         },
         {
           name: "PowerShell & Scripts",
-          icon: <FaTerminal className="w-8 h-8" />
+          icon: <FaTerminal className="w-8 h-8" />,
         },
         {
           name: "Technical Support",
-          icon: <FaDesktop className="w-8 h-8" />
-        }
-      ]
-    }
+          icon: <FaDesktop className="w-8 h-8" />,
+        },
+      ],
+    },
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-white to-blue-50 dark:from-indigo-900 dark:via-blue-900 dark:to-gray-900 transition-colors duration-500">
+    <section
+      id="skills"
+      className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-white to-blue-50 dark:from-indigo-900 dark:via-blue-900 dark:to-gray-900 transition-colors duration-500"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400 bg-clip-text text-transparent">
           Technical Skills
@@ -75,7 +84,7 @@ function Skills() {
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {category.skills.map((skill, skillIndex) => (
-                  <div 
+                  <div
                     key={skillIndex}
                     className="flex flex-col items-center p-6 backdrop-blur-sm bg-white/30 dark:bg-black/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                   >

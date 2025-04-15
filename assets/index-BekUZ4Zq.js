@@ -10226,7 +10226,7 @@ function kf() {
       category: "Cloud & Infrastructure",
       skills: [
         {
-          name: "AWS Cloud Services",
+          name: "Azure Cloud Services",
           icon: h.jsx(ef, { className: "w-8 h-8" }),
         },
         {
