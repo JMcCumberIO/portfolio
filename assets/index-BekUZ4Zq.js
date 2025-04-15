@@ -9700,6 +9700,12 @@ const gf = () =>
                             }),
                           ],
                         }),
+                        h.jsx("p", {
+                          className:
+                            "text-gray-700 dark:text-gray-300 transition-colors duration-300",
+                          children:
+                            "Delivered technical leadership for a global SaaS platform, optimizing performance through advanced monitoring, automation, and cross-functional collaboration with Product and Development teams. Resolved escalated incidents, mentored Tier 1/2 support teams, and managed 24/7 on-call rotations to uphold SLAs and client satisfaction via proactive EDI network troubleshooting. Drove process improvements and knowledge-sharing initiatives, enhancing system reliability and operational efficiency while ensuring best-in-class VAN Services.",
+                        }),
                       ],
                     }),
                     h.jsxs("div", {
