@@ -82,18 +82,31 @@ function App() {
   return (
     <AuthProvider>
       <Router basename="/portfolio">
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/auth/callback" element={<AuthCallback />} />
-          <Route 
-            path="/" 
-            element={
-              <ProtectedRoute>
-                <MainContent />
-              </ProtectedRoute>
-            } 
-          />
-        </Routes>
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-500">
+          <Navbar />
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/auth/callback" element={<AuthCallback />} />
+            <Route 
+              path="/" 
+              element={
+                <>
+                  <Hero />
+                  <Skills />
+                  <Projects />
+                  <Experience />
+                  <Certifications />
+                  <Education />
+                  <Contact />
+                  {/* AdminToolbar only shown when authenticated */}
+                  <ProtectedRoute>
+                    <AdminToolbar />
+                  </ProtectedRoute>
+                </>
+              } 
+            />
+          </Routes>
+        </div>
       </Router>
     </AuthProvider>
   );
