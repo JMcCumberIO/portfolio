@@ -9,6 +9,7 @@ import {
   FaTerminal,
   FaVectorSquare,
   FaUsers,
+  FaPython,
 } from "react-icons/fa";
 import { VscAzure } from "react-icons/vsc";
 
@@ -52,16 +53,16 @@ function Skills() {
       category: "Development & Tools",
       skills: [
         {
+          name: "Python Development",
+          icon: <FaPython className="w-8 h-8" />,
+        },
+        {
           name: "SQL & Databases",
           icon: <FaDatabase className="w-8 h-8" />,
         },
         {
           name: "PowerShell & Scripts",
           icon: <FaTerminal className="w-8 h-8" />,
-        },
-        {
-          name: "Technical Support",
-          icon: <FaDesktop className="w-8 h-8" />,
         },
       ],
     },
