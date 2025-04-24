@@ -1,5 +1,5 @@
 import React from 'react';
-import TestNav from './components/TestNav';
+import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './auth/AuthContext';
 import ProjectList from './components/Projects';
@@ -11,7 +11,7 @@ function App() {
     <AuthProvider>
       <Router>
         <div>
-          <TestNav />
+          <Navbar />
           <main className="mt-16 container mx-auto px-4">
             <Routes>
               <Route path="/" element={
