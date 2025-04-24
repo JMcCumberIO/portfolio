@@ -50,17 +50,20 @@ function Navbar() {
             Jonathan McCumber
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation and Auth */}
           <div className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-              >
-                {link.label}
-              </a>
-            ))}
+            {/* Navigation Links */}
+            <div className="flex items-center space-x-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
 
             {/* Desktop Auth Button */}
             {user ? (
