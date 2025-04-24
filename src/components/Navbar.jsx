@@ -50,23 +50,27 @@ function Navbar() {
             Jonathan McCumber
           </a>
 
-          {/* Desktop Navigation and Auth */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            {/* Navigation Links */}
-            <div className="flex items-center space-x-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-
-            {/* Desktop Auth Button */}
-            {user ? (
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
+              >
+                {link.label}
+              </a>
+            ))}
+            {!user && (
+              <button
+                onClick={() => window.location.href = './login'}
+                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
+              >
+                <FaGithub className="w-5 h-5" />
+                <span>Login with GitHub</span>
+              </button>
+            )}
+            {user && (
               <div className="flex items-center space-x-2">
                 <button
                   onClick={toggleEditMode}
@@ -87,14 +91,6 @@ function Navbar() {
                   Logout
                 </button>
               </div>
-            ) : (
-              <button
-                onClick={() => window.location.href = './login'}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
-              >
-                <FaGithub className="w-5 h-5" />
-                <span>Login with GitHub</span>
-              </button>
             )}
           </div>
 
