@@ -1,8 +1,10 @@
 // src/components/Navbar.jsx
 import React, { useState, useEffect } from "react";
-import { FaSun, FaMoon, FaBars } from "react-icons/fa";
+import { FaSun, FaMoon, FaBars, FaEdit, FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { useAuth } from '../auth/AuthContext';
 
 function Navbar() {
+  const { user, logout, isEditing, toggleEditMode } = useAuth();
   const [isDark, setIsDark] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return (
@@ -69,14 +71,45 @@ function Navbar() {
         <FaBars className="w-5 h-5" />
       </button>
 
-      {/* Dark Mode Toggle */}
-      <button
-        onClick={toggleTheme}
-        className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
-        aria-label="Toggle dark mode"
-      >
-        {isDark ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
-      </button>
+      {/* Auth Controls */}
+      <div className="flex items-center space-x-2">
+        {/* Dark Mode Toggle */}
+        <button
+          onClick={toggleTheme}
+          className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300"
+          aria-label="Toggle dark mode"
+        >
+          {isDark ? <FaSun className="w-5 h-5" /> : <FaMoon className="w-5 h-5" />}
+        </button>
+
+        {/* Auth Buttons */}
+        {user ? (
+          <>
+            <button
+              onClick={toggleEditMode}
+              className={`p-2 rounded-lg ${isEditing ? 'bg-blue-500 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'} hover:bg-blue-600 transition-colors duration-300`}
+              aria-label="Toggle edit mode"
+            >
+              <FaEdit className="w-5 h-5" />
+            </button>
+            <button
+              onClick={logout}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-red-500 hover:text-white transition-colors duration-300"
+              aria-label="Logout"
+            >
+              <FaSignOutAlt className="w-5 h-5" />
+            </button>
+          </>
+        ) : (
+          <button
+            onClick={() => window.location.href = '/login'}
+            className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-500 hover:text-white transition-colors duration-300"
+            aria-label="Login"
+          >
+            <FaSignInAlt className="w-5 h-5" />
+          </button>
+        )}
+      </div>
     </div>
 
     {/* Mobile Menu */}
