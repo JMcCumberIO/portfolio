@@ -102,11 +102,12 @@ function Navbar() {
           </>
         ) : (
           <button
-            onClick={() => window.location.href = '/login'}
-            className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-green-500 hover:text-white transition-colors duration-300"
-            aria-label="Login"
+            onClick={() => window.location.href = './login'}
+            className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors duration-300"
+            aria-label="Login with GitHub"
           >
             <FaSignInAlt className="w-5 h-5" />
+            <span>Login with GitHub</span>
           </button>
         )}
       </div>
