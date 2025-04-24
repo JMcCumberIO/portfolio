@@ -8,6 +8,7 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 import { AdminToolbar } from './components/AdminToolbar';
 import { Login } from './pages/Login';
@@ -37,6 +38,7 @@ const MainContent = () => {
       <Navbar />
       <EditableContent contentType="html" component={Hero} />
       <EditableContent contentType="html" component={Skills} />
+      <EditableContent contentType="html" component={Projects} />
       <EditableContent contentType="html" component={Experience} />
       <EditableContent contentType="html" component={Certifications} />
       <EditableContent contentType="html" component={Education} />
