@@ -9672,7 +9672,7 @@ const gf = () =>
                     h.jsx("span", {
                       className:
                         "text-sm ml-2 text-gray-600 dark:text-gray-400",
-                      children: "(3 years 3 months)",
+                      children: "(3 years 5 months)",
                     }),
                   ],
                 }),
@@ -9692,7 +9692,7 @@ const gf = () =>
                           className:
                             "text-blue-600 dark:text-blue-300 mb-2 font-medium transition-colors duration-300",
                           children: [
-                            "Dec 2023 - Present",
+                            "Dec 2023 - Apr 2025",
                             h.jsx("span", {
                               className:
                                 "ml-2 text-sm text-gray-600 dark:text-gray-400",

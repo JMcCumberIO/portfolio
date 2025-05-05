@@ -1,7 +1,9 @@
+/* Tailwind CSS layers */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Custom scrollbar styles */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -14,12 +16,19 @@
 ::-webkit-scrollbar-thumb {
   border-radius: 25px;
   transition: all 0.3s;
-  background-color: rgba(106, 115, 125, 0.2);
-  &:hover {
-    background-color: rgba(106, 115, 125, 0.27);
-  }
+  background-color: rgb(106 115 125 / 20%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(106 115 125 / 27%);
 }
 
 ::-webkit-scrollbar-corner {
   display: none;
+}
+
+/* Firefox scrollbar styles */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(106, 115, 125, 0.2) transparent;
 }
