@@ -71,8 +71,7 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-white to-blue-50 dark:from-indigo-900 dark:via-blue-900 dark:to-gray-900 transition-colors duration-500"
-    >
+      className="min-h-screen py-20 px-4 bg-gradient-to-b from-purple-900 to-indigo-900">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400 bg-clip-text text-transparent">
           Technical Skills

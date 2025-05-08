@@ -40,3 +40,6 @@ coverage/
 # Vite
 *.local
 pnpm-workspace.yaml
+
+# Package lock file
+package-lock.json

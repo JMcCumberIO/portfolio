@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 // Create the theme context
-const ThemeContext = createContext();
+export const ThemeContext = createContext();
 
 // Custom hook to use the theme context
 export const useTheme = () => {
@@ -14,24 +14,7 @@ export const useTheme = () => {
 
 // Theme provider component
 export const ThemeProvider = ({ children }) => {
-  // Check if user has previously set a theme preference
-  const getInitialTheme = () => {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const storedTheme = window.localStorage.getItem('theme');
-      if (storedTheme) {
-        return storedTheme;
-      }
-
-      // Check for user system preference
-      const userMedia = window.matchMedia('(prefers-color-scheme: dark)');
-      if (userMedia.matches) {
-        return 'dark';
-      }
-    }
-    return 'light'; // default theme
-  };
-
-  const [theme, setTheme] = useState(getInitialTheme);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
   // Toggle between light and dark themes
   const toggleTheme = () => {

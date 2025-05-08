@@ -2,7 +2,7 @@ import React from 'react';
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-4 bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-indigo-900 dark:via-blue-900 dark:to-purple-900 transition-colors duration-500">
+    <section className="min-h-screen py-20 px-4 bg-gradient-to-b from-purple-900 to-blue-800">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
           Professional Experience

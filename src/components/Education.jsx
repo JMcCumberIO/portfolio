@@ -3,7 +3,7 @@ import React from 'react';
 
 function Education() {
   return (
-    <section id="education" className="py-20 px-4 bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-purple-900 dark:via-blue-900 dark:to-gray-900 transition-colors duration-500">
+    <section className="min-h-screen py-20 px-4 bg-gradient-to-b from-blue-800 to-purple-900">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
           Education

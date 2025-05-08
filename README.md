@@ -98,6 +98,30 @@ import LoginNav from './LoginNav';
 1. Dark Mode Not Persisting: Ensure localStorage is enabled in your browser.
 2. Build Errors: Check that all dependencies are installed and up to date by running pnpm install.
 
+## 🧪 Testing
+
+To run unit tests:
+
+```bash
+pnpm test
+```
+
+⚙️ Environment Variables
+Copy and fill in your values:
+
+```bash
+cp .env.example .env
+```
+
+After applying these, run:
+
+```bash
+pnpm install
+pnpm run lint
+pnpm run lint:css
+pnpm test
+pnpm run clean && pnpm build
+
 ## 📝 License
 
 MIT License - feel free to use this code for your own portfolio!
