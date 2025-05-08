@@ -69,11 +69,9 @@ function Skills() {
   ];
 
   return (
-    <section
-      id="skills"
-      className="min-h-screen py-20 px-4 bg-gradient-to-b from-purple-900 to-indigo-900">
+    <section className="min-h-screen pt-4 px-4 bg-gradient-to-b from-blue-900 to-purple-900">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-400 dark:to-blue-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
           Technical Skills
         </h2>
         <div className="space-y-12">
