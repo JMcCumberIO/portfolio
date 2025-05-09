@@ -14,7 +14,15 @@ export const useTheme = () => {
 
 // Theme provider component
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  // On mount, set theme based on localStorage or system preference
+  const getInitialTheme = () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) return savedTheme;
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+    return 'light';
+  };
+
+  const [theme, setTheme] = useState(getInitialTheme);
 
   // Toggle between light and dark themes
   const toggleTheme = () => {
@@ -24,8 +32,13 @@ export const ThemeProvider = ({ children }) => {
   // Apply theme to HTML element whenever theme changes
   useEffect(() => {
     const root = window.document.documentElement;
-    root.classList.remove('light', 'dark');
-    root.classList.add(theme);
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+    } else {
+      root.classList.remove('dark');
+      root.classList.add('light');
+    }
     localStorage.setItem('theme', theme);
   }, [theme]);
 
