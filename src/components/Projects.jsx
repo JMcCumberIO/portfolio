@@ -1,29 +1,29 @@
 // src/components/Projects.jsx
 import React from "react";
-import { FaGithub, FaPython, FaChartBar, FaRobot } from "react-icons/fa";
+import { FaGithub, FaPython, FaMarkdown, FaJsSquare } from "react-icons/fa";
 
 function Projects() {
   const projects = [
     {
-      title: "Data Analysis Pipeline",
-      description: "Automated data processing and analysis pipeline using Python, Pandas, and NumPy. Features include data cleaning, visualization, and report generation.",
-      icon: <FaChartBar className="w-8 h-8" />,
-      tags: ["Python", "Pandas", "NumPy", "Data Analysis"],
-      githubLink: "https://github.com/JMcCumberIO/data-analysis-pipeline"
+      title: "Portfolio Website",
+      description: "This very site! A modern, responsive portfolio built with React and Tailwind CSS, showcasing professional experience, skills, and projects.",
+      icon: <FaJsSquare className="w-8 h-8" />,
+      tags: ["React", "Tailwind CSS", "JavaScript"],
+      githubLink: "https://github.com/JMcCumberIO/portfolio"
     },
     {
-      title: "Task Automation Suite",
-      description: "Collection of Python scripts for automating routine system administration tasks, including log analysis, file management, and scheduled backups.",
-      icon: <FaRobot className="w-8 h-8" />,
-      tags: ["Python", "Automation", "System Admin"],
-      githubLink: "https://github.com/JMcCumberIO/task-automation"
-    },
-    {
-      title: "Python API Framework",
-      description: "RESTful API framework built with Python and Flask, featuring authentication, data validation, and automated testing.",
+      title: "Flashforge Adventurer 5M Scripts",
+      description: "Python scripts and resources for the Flashforge Adventurer 5M 3D printer, including automation and utility tools.",
       icon: <FaPython className="w-8 h-8" />,
-      tags: ["Python", "Flask", "REST API"],
-      githubLink: "https://github.com/JMcCumberIO/python-api"
+      tags: ["Python", "3D Printing", "Automation"],
+      githubLink: "https://github.com/JMcCumberIO/flashforge_adventurer5m"
+    },
+    {
+      title: "GitHub Profile Config",
+      description: "Config files and profile README for my GitHub profile, including workflow badges and markdown customization.",
+      icon: <FaMarkdown className="w-8 h-8" />,
+      tags: ["Markdown", "GitHub Actions", "Profile"],
+      githubLink: "https://github.com/JMcCumberIO/JMcCumberIO"
     }
   ];
 
