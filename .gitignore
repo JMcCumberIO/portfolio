@@ -43,3 +43,6 @@ pnpm-workspace.yaml
 
 # Package lock file
 package-lock.json
+
+# Old version
+portfolio-main
