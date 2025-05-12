@@ -19,11 +19,11 @@ function Projects() {
       githubLink: "https://github.com/JMcCumberIO/flashforge_adventurer5m"
     },
     {
-      title: "GitHub Profile Config",
-      description: "Config files and profile README for my GitHub profile, including workflow badges and markdown customization.",
-      icon: <FaMarkdown className="w-8 h-8" />,
-      tags: ["Markdown", "GitHub Actions", "Profile"],
-      githubLink: "https://github.com/JMcCumberIO/JMcCumberIO"
+      title: "Enterprise Automation Framework",
+      description: "A modular framework for automating enterprise cloud infrastructure provisioning and management. Built with PowerShell and Bicep, it enables repeatable, scalable deployments and automation workflows for Azure environments.",
+      icon: <FaPython className="w-8 h-8" />,
+      tags: ["PowerShell", "Bicep", "Azure", "Automation"],
+      githubLink: "https://github.com/JMcCumberIO/Enterprise-Automation-Framework"
     }
   ];
 
