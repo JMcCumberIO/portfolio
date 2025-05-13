@@ -70,6 +70,12 @@ const Experience = () => {
                 <p className="text-blue-600 dark:text-blue-300 mb-2 font-medium transition-colors duration-300">
                   Jun 2021 - Dec 2021 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remote, Michigan, United States</span>
                 </p>
+                <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
+                  Provided advanced technical support for CJIS-compliant government systems, ensuring adherence to strict security protocols. Responsibilities included troubleshooting complex network and system issues, implementing secure configurations, and collaborating with government agencies to maintain system integrity and compliance.
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
+                  Acquired VIPER 911 call system certification, enhancing expertise in emergency communication systems and ensuring compliance with industry standards.
+                </p>
               </div>
 
               {/* System Engineer */}
