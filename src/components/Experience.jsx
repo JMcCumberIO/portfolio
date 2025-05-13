@@ -68,7 +68,7 @@ const Experience = () => {
                   Systems Engineer Tier 2
                 </h4>
                 <p className="text-blue-600 dark:text-blue-300 mb-2 font-medium transition-colors duration-300">
-                  Jun 2021 - Dec 2021 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">United States</span>
+                  Jun 2021 - Dec 2021 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remote, Michigan, United States</span>
                 </p>
               </div>
 
@@ -78,7 +78,7 @@ const Experience = () => {
                   System Engineer
                 </h4>
                 <p className="text-blue-600 dark:text-blue-300 mb-2 font-medium transition-colors duration-300">
-                  Aug 2020 - Jun 2021 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Saginaw, Michigan, United States</span>
+                  Aug 2020 - Jun 2021 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remote, Michigan, United States</span>
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                   The Systems Engineer I is responsible for handling service requests and incidents escalated from the Helpdesk and Systems Engineer I. This relates to technologies including printers, workstations, servers, vendor-specific hardware/software, backups, and disaster recovery equipment. IT support for customers using Microsoft operating systems and applications, virtual environments built on Microsoft, VMware, and Citrix.
