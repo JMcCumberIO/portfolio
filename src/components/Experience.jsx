@@ -34,7 +34,7 @@ const Experience = () => {
                   Manager I, Development
                 </h4>
                 <p className="text-blue-600 dark:text-blue-300 mb-2 font-medium transition-colors duration-300">
-                  Aug 2022 - Dec 2023
+                  Aug 2022 - Dec 2023 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remote, United States</span>
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
                   Software Development manager manages a team of Individual contributors across a spectrum of technical roles as well as customer-facing roles. Team members range from associate levels through senior-level positions. In this position, the manager builds a relationship of trust with direct reports that includes coaching, developing, and managing employee performance.
@@ -47,7 +47,10 @@ const Experience = () => {
                   Software Engineer
                 </h4>
                 <p className="text-blue-600 dark:text-blue-300 mb-2 font-medium transition-colors duration-300">
-                  Jan 2022 - Aug 2022 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">United States</span>
+                  Jan 2022 - Aug 2022 <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remote, United States</span>
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 transition-colors duration-300">
+                  Contributed to the development and maintenance of scalable software solutions, collaborating with cross-functional teams to deliver high-quality applications. Focused on optimizing code performance and ensuring seamless user experiences.
                 </p>
               </div>
             </div>
