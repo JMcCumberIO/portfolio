@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../auth/AuthContext';
 import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
-  const { user, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Close mobile menu when resizing to desktop view
@@ -92,15 +90,6 @@ export default function Navbar() {
                 )}
               </svg>
             </button>
-
-            {/* Login Button - Visible on Desktop */}
-            <div className="hidden md:block">
-              {user ? (
-                <button onClick={logout} className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">Logout</button>
-              ) : (
-                <Link to="/login" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Login</Link>
-              )}
-            </div>
           </div>
         </div>
 
@@ -146,13 +135,6 @@ export default function Navbar() {
             >
               Contact
             </a>
-            <div className="px-3 xs:px-4 pt-2 xs:pt-3">
-              {user ? (
-                <button onClick={logout} className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 w-full">Logout</button>
-              ) : (
-                <Link to="/login" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 w-full text-center block">Login</Link>
-              )}
-            </div>
           </div>
         </div>
       </div>
