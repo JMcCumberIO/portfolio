@@ -1,5 +1,6 @@
 // src/components/Hero.jsx
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Hero() {
   return (
@@ -21,23 +22,45 @@ function Hero() {
             </p>
           </div>
           <div className="flex justify-center gap-6">
-            <a 
+            <CallToActionButton 
               href="#contact" 
-              className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              isPrimary={true}
             >
               Contact Me
-            </a>
-            <a 
+            </CallToActionButton>
+            <CallToActionButton 
               href="#experience" 
-              className="px-8 py-3 bg-white/30 dark:bg-black/20 backdrop-blur-sm text-blue-700 dark:text-blue-300 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              isPrimary={false}
             >
               View Experience
-            </a>
+            </CallToActionButton>
           </div>
         </div>
       </div>
     </section>
   );
 }
+
+// Reusable button component to ensure consistent styling and accessibility
+const CallToActionButton = ({ href, isPrimary = false, children }) => {
+  const baseClasses = "px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2";
+  const primaryClasses = "bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white";
+  const secondaryClasses = "bg-white/30 dark:bg-black/20 backdrop-blur-sm text-blue-700 dark:text-blue-300";
+
+  return (
+    <a 
+      href={href}
+      className={`${baseClasses} ${isPrimary ? primaryClasses : secondaryClasses}`}
+    >
+      {children}
+    </a>
+  );
+};
+
+CallToActionButton.propTypes = {
+  href: PropTypes.string.isRequired,
+  isPrimary: PropTypes.bool,
+  children: PropTypes.node.isRequired
+};
 
 export default Hero;

@@ -29,6 +29,24 @@ export const ThemeProvider = ({ children }) => {
     setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
   };
 
+  // Listen for OS theme preference changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    const handleChange = () => {
+      const savedTheme = localStorage.getItem('theme');
+      // Only change theme automatically if user hasn't explicitly set a preference
+      if (!savedTheme) {
+        setTheme(mediaQuery.matches ? 'dark' : 'light');
+      }
+    };
+
+    // Modern browsers
+    mediaQuery.addEventListener('change', handleChange);
+    
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   // Apply theme to HTML element whenever theme changes
   useEffect(() => {
     const root = window.document.documentElement;

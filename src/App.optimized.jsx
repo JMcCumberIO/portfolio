@@ -6,7 +6,6 @@ import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
-import SkipToContent from "./components/SkipToContent";
 
 // Lazy loading for non-critical components
 const Experience = lazy(() => import("./components/Experience"));
@@ -17,7 +16,7 @@ const Contact = lazy(() => import("./components/Contact"));
 
 // Loading spinner for Suspense fallback
 const LoadingSpinner = () => (
-  <div className="flex items-center justify-center p-8">
+  <div className="flex items-center justify-center min-h-screen">
     <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
   </div>
 );
@@ -25,9 +24,8 @@ const LoadingSpinner = () => (
 // Main content component for the homepage
 const HomePage = () => (
   <>
-    <SkipToContent />
     <Navbar />
-    <main id="main-content" className="w-full mx-auto px-4 py-8">
+    <main className="w-full mx-auto px-4 py-8">
       <Hero />
       <Suspense fallback={<LoadingSpinner />}>
         <Experience />

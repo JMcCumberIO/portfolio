@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
+import PropTypes from 'prop-types';
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -22,22 +23,35 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Handle keyboard accessibility for navigation items
+  const handleKeyDown = (event, action) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      action();
+    }
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 w-full relative">
           {/* Logo */}
-          <Link to="/" className="text-lg xs:text-xl sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent transition-colors duration-300">
+          <Link 
+            to="/" 
+            className="text-lg xs:text-xl sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent transition-colors duration-300"
+            aria-label="Jonathan McCumber - Home"
+          >
             Jonathan McCumber
           </Link>
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex space-x-6 items-center">
-            <a href="#experience" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">Experience</a>
-            <a href="#education" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">Education</a>
-            <a href="#certifications" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">Certifications</a>
-            <a href="#skills" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">Skills</a>
-            <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">Contact</a>
+            <NavLink href="#experience">Experience</NavLink>
+            <NavLink href="#education">Education</NavLink>
+            <NavLink href="#certifications">Certifications</NavLink>
+            <NavLink href="#skills">Skills</NavLink>
+            <NavLink href="#projects">Projects</NavLink>
+            <NavLink href="#contact">Contact</NavLink>
           </div>
 
           {/* Always Visible Controls */}
@@ -45,8 +59,9 @@ export default function Navbar() {
             {/* Dark Mode Toggle */}
             <button 
               onClick={toggleTheme}
-              className="p-1 xs:p-1.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300" 
-              aria-label="Toggle dark mode"
+              onKeyDown={(e) => handleKeyDown(e, toggleTheme)}
+              className="p-1 xs:p-1.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+              aria-label={theme === 'dark' ? "Switch to light mode" : "Switch to dark mode"}
             >
               {theme === 'dark' ? (
                 <svg className="w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +77,8 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMenu}
-              className="block md:hidden inline-flex items-center justify-center p-1.5 xs:p-2 sm:p-2.5 rounded-lg bg-blue-500 dark:bg-blue-600 text-white hover:bg-blue-600 dark:hover:bg-blue-700 transition-all duration-300 border-2 border-blue-400 dark:border-blue-300 shadow-lg"
+              onKeyDown={(e) => handleKeyDown(e, toggleMenu)}
+              className="block md:hidden inline-flex items-center justify-center p-1.5 xs:p-2 sm:p-2.5 rounded-lg bg-blue-500 dark:bg-blue-600 text-white hover:bg-blue-600 dark:hover:bg-blue-700 transition-all duration-300 border-2 border-blue-400 dark:border-blue-300 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               aria-label="Toggle mobile menu"
               aria-expanded={isMenuOpen}
             >
@@ -98,46 +114,50 @@ export default function Navbar() {
           className={`${
             isMenuOpen ? 'max-h-96 opacity-100 translate-y-0' : 'max-h-0 opacity-0 -translate-y-2'
           } md:hidden overflow-hidden transition-all duration-300 ease-in-out -mx-1 xs:-mx-2 sm:-mx-4 ${isMenuOpen ? 'backdrop-blur-sm bg-white/30 dark:bg-gray-900/30' : ''}`}
+          aria-hidden={!isMenuOpen}
         >
           <div className="py-3 space-y-2 xs:space-y-3 sm:space-y-4 pb-5">
-            <a 
-              href="#experience" 
-              className="block px-3 xs:px-4 py-1.5 xs:py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-300 text-sm xs:text-base"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Experience
-            </a>
-            <a 
-              href="#education" 
-              className="block px-3 xs:px-4 py-1.5 xs:py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-300 text-sm xs:text-base"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Education
-            </a>
-            <a 
-              href="#certifications" 
-              className="block px-3 xs:px-4 py-1.5 xs:py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-300 text-sm xs:text-base"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Certifications
-            </a>
-            <a 
-              href="#skills" 
-              className="block px-3 xs:px-4 py-1.5 xs:py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-300 text-sm xs:text-base"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Skills
-            </a>
-            <a 
-              href="#contact" 
-              className="block px-3 xs:px-4 py-1.5 xs:py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-300 text-sm xs:text-base"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Contact
-            </a>
+            <MobileNavLink href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</MobileNavLink>
+            <MobileNavLink href="#education" onClick={() => setIsMenuOpen(false)}>Education</MobileNavLink>
+            <MobileNavLink href="#certifications" onClick={() => setIsMenuOpen(false)}>Certifications</MobileNavLink>
+            <MobileNavLink href="#skills" onClick={() => setIsMenuOpen(false)}>Skills</MobileNavLink>
+            <MobileNavLink href="#projects" onClick={() => setIsMenuOpen(false)}>Projects</MobileNavLink>
+            <MobileNavLink href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</MobileNavLink>
           </div>
         </div>
       </div>
     </nav>
   );
 }
+
+// Reusable NavLink component for desktop navigation
+const NavLink = ({ href, children }) => (
+  <a 
+    href={href} 
+    className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 rounded-md py-1 px-2"
+  >
+    {children}
+  </a>
+);
+
+NavLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+// Reusable MobileNavLink component for mobile navigation
+const MobileNavLink = ({ href, onClick, children }) => (
+  <a 
+    href={href} 
+    className="block px-3 xs:px-4 py-1.5 xs:py-2 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-md transition-colors duration-300 text-sm xs:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+    onClick={onClick}
+  >
+    {children}
+  </a>
+);
+
+MobileNavLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
+};

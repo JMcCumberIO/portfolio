@@ -1,0 +1,49 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      
+      - name: Install PNPM
+        run: npm install -g pnpm
+      
+      - name: Install Dependencies
+        run: pnpm install
+      
+      - name: Run Linting
+        run: pnpm lint
+      
+      - name: Run Tests
+        run: pnpm test
+      
+      - name: Build
+        run: pnpm build
+      
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: dist/
+      
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # The folder the action should deploy
+          branch: gh-pages # The branch the action should deploy to
