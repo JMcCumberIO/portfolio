@@ -25,6 +25,11 @@ jobs:
         with:
           version: 8 # Specify the required pnpm version
       
+      # Add the following debug step to verify pnpm installation
+      - name: Verify PNPM Installation
+        run: |
+          pnpm --version || { echo "PNPM is not installed or not in PATH"; exit 1; }
+      
       - name: Install Dependencies
         run: pnpm install
       
