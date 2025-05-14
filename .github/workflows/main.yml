@@ -39,7 +39,7 @@ jobs:
         run: test -d dist || { echo "Build output directory 'dist/' not found"; exit 1; }
       
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v3
         with:
           name: build-output
           path: dist/
