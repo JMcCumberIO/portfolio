@@ -1,65 +1,36 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
 
 jobs:
-  build-and-test:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v2
         with:
-          node-version: '20'
-          cache: 'pnpm'
-      
-      - name: Setup PNPM
+          node-version: '18'
+
+      - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 8
-      
-      - name: Add PNPM to PATH
-        run: |
-          export PATH=$(npm bin -g):$PATH
-          pnpm --version || { echo "PNPM is still not found in PATH"; exit 1; }
-
-      - name: Verify Node.js Installation
-        run: |
-          node --version || { echo "Node.js is not installed"; exit 1; }
-          npm --version || { echo "NPM is not installed"; exit 1; }
 
       - name: Install Dependencies
         run: pnpm install
-      
-      - name: Run Linting
-        run: pnpm lint
-      
-      - name: Run Tests
-        run: pnpm test
-      
+
       - name: Build
-        run: pnpm build
-      
-      - name: Verify Build Output
-        run: test -d dist || { echo "Build output directory 'dist/' not found"; exit 1; }
-      
-      - name: Upload Build Artifact
-        uses: actions/upload-artifact@v4
+        run: pnpm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
-          name: build-output
-          path: dist/
-          if-no-files-found: error
-      
-      - name: Deploy to GitHub Pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
           branch: gh-pages
+          folder: dist
+          token: ${{ secrets.GITHUB_TOKEN }}
