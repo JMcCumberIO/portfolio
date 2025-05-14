@@ -23,13 +23,18 @@ jobs:
       - name: Setup PNPM
         uses: pnpm/action-setup@v2
         with:
-          version: 8 # Specify the required pnpm version
+          version: 8
       
-      # Add the following debug step to verify pnpm installation
-      - name: Verify PNPM Installation
+      - name: Add PNPM to PATH
         run: |
-          pnpm --version || { echo "PNPM is not installed or not in PATH"; exit 1; }
-      
+          export PATH=$(npm bin -g):$PATH
+          pnpm --version || { echo "PNPM is still not found in PATH"; exit 1; }
+
+      - name: Verify Node.js Installation
+        run: |
+          node --version || { echo "Node.js is not installed"; exit 1; }
+          npm --version || { echo "NPM is not installed"; exit 1; }
+
       - name: Install Dependencies
         run: pnpm install
       
