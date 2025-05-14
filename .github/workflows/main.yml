@@ -39,14 +39,15 @@ jobs:
         run: test -d dist || { echo "Build output directory 'dist/' not found"; exit 1; }
       
       - name: Upload Build Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-output
           path: dist/
+          if-no-files-found: error
       
       - name: Deploy to GitHub Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # The folder the action should deploy
-          branch: gh-pages # The branch the action should deploy to
+          folder: dist
+          branch: gh-pages
