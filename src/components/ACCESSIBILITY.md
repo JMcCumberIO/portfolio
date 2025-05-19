@@ -1,4 +1,5 @@
 # Skip to Content Link
+
 This component adds an accessibility feature that allows keyboard users to skip directly to the main content.
 
 ```jsx
@@ -19,7 +20,8 @@ function SkipToContent() {
 export default SkipToContent;
 ```
 
-# Usage
+## Usage
+
 Add this component at the top of your App component, before the Navbar:
 
 ```jsx
