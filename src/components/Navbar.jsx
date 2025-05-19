@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import PropTypes from 'prop-types';
 
@@ -36,13 +35,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 w-full relative">
           {/* Logo */}
-          <Link 
-            to="/" 
+          <a 
+            href="#" 
             className="text-lg xs:text-xl sm:text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent transition-colors duration-300"
             aria-label="Jonathan McCumber - Home"
           >
             Jonathan McCumber
-          </Link>
+          </a>
 
           {/* Desktop Nav Links */}
           <div className="hidden md:flex space-x-6 items-center">
