@@ -6,16 +6,51 @@ function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      console.log('Scroll event', window.scrollY); // Debug: log scroll position
-      setVisible(window.scrollY > 200);
+    // Try to find a main scrollable container
+    const mainIds = ['root', 'app', 'main', 'content'];
+    let scrollContainer = null;
+    for (const id of mainIds) {
+      const el = document.getElementById(id);
+      if (el && (el.scrollHeight > el.clientHeight)) {
+        scrollContainer = el;
+        break;
+      }
+    }
+    const handleScroll = () => {
+      const scrollY = scrollContainer ? scrollContainer.scrollTop : window.scrollY;
+      console.log('Scroll event', scrollY, 'on', scrollContainer ? scrollContainer.id : 'window');
+      setVisible(scrollY > 200);
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', handleScroll, { passive: true });
+    } else {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+    return () => {
+      if (scrollContainer) {
+        scrollContainer.removeEventListener('scroll', handleScroll);
+      } else {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, []);
 
   const handleClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Scroll the correct container
+    const mainIds = ['root', 'app', 'main', 'content'];
+    let scrollContainer = null;
+    for (const id of mainIds) {
+      const el = document.getElementById(id);
+      if (el && (el.scrollHeight > el.clientHeight)) {
+        scrollContainer = el;
+        break;
+      }
+    }
+    if (scrollContainer) {
+      scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   // TEMP: Use red background for visibility
