@@ -76,8 +76,7 @@ function Projects() {
   ];
 
   return (
-    <section
-      id="projects"
+    <section id="projects"
       className="py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-blue-900 dark:via-gray-900 dark:to-indigo-900 transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto">
