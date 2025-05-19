@@ -53,12 +53,11 @@ function ScrollToTopButton() {
     }
   };
 
-  // TEMP: Use red background for visibility
   return visible ? (
     <button
       onClick={handleClick}
       aria-label="Scroll to top"
-      className="fixed bottom-6 right-6 z-[9999] bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+      className="fixed bottom-6 right-6 z-[9999] bg-gradient-to-br from-blue-600 via-purple-600 to-blue-400 text-white p-3 rounded-full shadow-lg hover:from-blue-700 hover:via-purple-700 hover:to-blue-500 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
     >
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
