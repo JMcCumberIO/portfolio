@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 function Contact() {
   return (
-    <section id="contact" className="py-20 px-4 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 dark:from-purple-900 dark:via-indigo-900 dark:to-blue-900 transition-colors duration-500">
+    <section id="contact" className="py-20 px-4 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-400 dark:to-blue-400 bg-clip-text text-transparent">
           Get In Touch
@@ -22,7 +22,7 @@ function Contact() {
           </a>
 
           <a
-            href="https://github.com/jonathan-mccumber"
+            href="https://github.com/JMcCumberIO"
             target="_blank"
             rel="noopener noreferrer"
             className="flex flex-col items-center p-6 backdrop-blur-sm bg-white/30 dark:bg-black/20 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"

@@ -21,7 +21,7 @@ const LoadingSpinner = () => (
 function App() {
   return (
     <ThemeProvider>
-      <div className="bg-gray-50 dark:bg-gray-900 min-h-screen">
+      <div className="min-h-screen bg-transparent">
         <SkipToContent />
         <Navbar />
         <main id="main-content" className="w-full mx-auto px-4 py-8">

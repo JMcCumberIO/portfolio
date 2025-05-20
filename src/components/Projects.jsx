@@ -76,9 +76,7 @@ function Projects() {
   ];
 
   return (
-    <section id="projects"
-      className="py-20 px-4 bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-blue-900 dark:via-gray-900 dark:to-indigo-900 transition-colors duration-500"
-    >
+    <section id="projects" className="py-20 px-4 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 bg-clip-text text-transparent">
           Featured Projects

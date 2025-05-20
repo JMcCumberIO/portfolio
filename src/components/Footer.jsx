@@ -25,7 +25,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-8">
+    <footer className="w-full bg-transparent border-t border-gray-200 dark:border-gray-700 mt-8">
       <div className="w-full mx-auto px-4 py-8 max-w-7xl">
         <div className="flex flex-col items-center justify-center space-y-4">
           {/* Social links */}
@@ -36,7 +36,7 @@ const Footer = () => {
               icon={<FaGithub className="w-6 h-6" />}
             />
             <SocialLink
-              href="https://linkedin.com/in/jonathan-mccumber"
+              href="https://www.linkedin.com/in/jon-mccumber-3505b212b/"
               label="LinkedIn Profile"
               icon={<FaLinkedin className="w-6 h-6" />}
             />

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function Hero() {
   return (
-    <section className="min-h-screen flex items-center py-20 px-4 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900 dark:via-indigo-900 dark:to-purple-900 transition-colors duration-500">
+    <section className="min-h-screen flex items-center py-20 px-4 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
