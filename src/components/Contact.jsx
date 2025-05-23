@@ -44,7 +44,7 @@ function Contact() {
 
         <div className="mt-16 text-center">
           <a
-            href="/assets/jonathan-mccumber-resume.pdf"
+            href={`${import.meta.env.BASE_URL}assets/jonathan-mccumber-resume.pdf`}
             download
             className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 dark:from-purple-500 dark:to-blue-500 text-white px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
