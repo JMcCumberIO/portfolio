@@ -57,7 +57,7 @@ function Projects() {
       title: "Portfolio Website",
       description: "This very site! A modern, responsive portfolio built with React and Tailwind CSS, showcasing professional experience, skills, and projects.",
       icon: <FaJsSquare className="w-8 h-8" />,
-      tags: ["React", "Tailwind CSS", "JavaScript"],
+      tags: ["React", "Tailwind CSS", "JavaScript", "Vite"],
       githubLink: "https://github.com/JMcCumberIO/portfolio"
     },
     {
